@@ -16,17 +16,28 @@ void display(){
 class derived:public Student{
     public:
     int marks;
-derived(string n,string r,int m):Student(n,r){
+    int marks2;
+    int marks3;
+    int avg;
+    int total;
+derived(string n,string r,int m,int m2,int m3):Student(n,r){
     marks=m;
-
+    marks2=m2;
+    marks3=m3;
+}
+  void compute(){
+    total=marks+marks2+marks3;
+    avg=(marks+marks2+marks3)/3;
 }
 void display(){
     Student::display();
-    cout<<"Marks: "<<marks<<endl;
+    cout<<"Total: "<<total<<endl;
+    cout<<"Average: "<<avg<<endl;
 }
 };
 int main(){
-    derived d("Krithik","67",85);
+    derived d("hunt","67",85,90,75);
+    d.compute();
     d.display();
     return 0;
 }
